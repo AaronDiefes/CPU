@@ -1,0 +1,183 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 10;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x13680ee70 .scope module, "left_barrel_shifter_tb" "left_barrel_shifter_tb" 2 1;
+ .timescale -9 -10;
+v0x6000034a6010_0 .var "ctrl_shiftamt", 4 0;
+v0x6000034a60a0_0 .var "data_operandA", 31 0;
+v0x6000034a6130_0 .net "data_result", 31 0, L_0x6000037acb40;  1 drivers
+S_0x13680ea30 .scope module, "uut" "left_barrel_shifter" 2 7, 3 1 0, S_0x13680ee70;
+ .timescale -9 -10;
+    .port_info 0 /INPUT 32 "data_operandA";
+    .port_info 1 /INPUT 5 "ctrl_shiftamt";
+    .port_info 2 /OUTPUT 32 "data_result";
+v0x6000034a5950_0 .net "ctrl_shiftamt", 4 0, v0x6000034a6010_0;  1 drivers
+v0x6000034a59e0_0 .net "data_operandA", 31 0, v0x6000034a60a0_0;  1 drivers
+v0x6000034a5a70_0 .net "data_result", 31 0, L_0x6000037acb40;  alias, 1 drivers
+v0x6000034a5b00_0 .net "final_sll_16", 31 0, L_0x6000037ac140;  1 drivers
+v0x6000034a5b90_0 .net "final_sll_2", 31 0, L_0x6000037ac8c0;  1 drivers
+v0x6000034a5c20_0 .net "final_sll_4", 31 0, L_0x6000037ac640;  1 drivers
+v0x6000034a5cb0_0 .net "final_sll_8", 31 0, L_0x6000037ac3c0;  1 drivers
+v0x6000034a5d40_0 .net "sll1", 31 0, L_0x6000037acaa0;  1 drivers
+v0x6000034a5dd0_0 .net "sll16", 31 0, L_0x6000037ac0a0;  1 drivers
+v0x6000034a5e60_0 .net "sll2", 31 0, L_0x6000037ac820;  1 drivers
+v0x6000034a5ef0_0 .net "sll4", 31 0, L_0x6000037ac5a0;  1 drivers
+v0x6000034a5f80_0 .net "sll8", 31 0, L_0x6000037ac320;  1 drivers
+L_0x6000037ac1e0 .part v0x6000034a6010_0, 4, 1;
+L_0x6000037ac460 .part v0x6000034a6010_0, 3, 1;
+L_0x6000037ac6e0 .part v0x6000034a6010_0, 2, 1;
+L_0x6000037ac960 .part v0x6000034a6010_0, 1, 1;
+L_0x6000037acbe0 .part v0x6000034a6010_0, 0, 1;
+S_0x13680e5f0 .scope module, "shamt_1" "mux_2" 3 27, 4 1 0, S_0x13680ea30;
+ .timescale -9 -10;
+    .port_info 0 /INPUT 1 "select";
+    .port_info 1 /INPUT 32 "in0";
+    .port_info 2 /INPUT 32 "in1";
+    .port_info 3 /OUTPUT 32 "out";
+P_0x6000013a4200 .param/l "WIDTH" 0 4 1, +C4<00000000000000000000000000100000>;
+v0x6000034a42d0_0 .net "in0", 31 0, L_0x6000037ac8c0;  alias, 1 drivers
+v0x6000034a4360_0 .net "in1", 31 0, L_0x6000037acaa0;  alias, 1 drivers
+v0x6000034a43f0_0 .net "out", 31 0, L_0x6000037acb40;  alias, 1 drivers
+v0x6000034a4480_0 .net "select", 0 0, L_0x6000037acbe0;  1 drivers
+L_0x6000037acb40 .functor MUXZ 32, L_0x6000037ac8c0, L_0x6000037acaa0, L_0x6000037acbe0, C4<>;
+S_0x13680e1b0 .scope module, "shamt_16" "mux_2" 3 11, 4 1 0, S_0x13680ea30;
+ .timescale -9 -10;
+    .port_info 0 /INPUT 1 "select";
+    .port_info 1 /INPUT 32 "in0";
+    .port_info 2 /INPUT 32 "in1";
+    .port_info 3 /OUTPUT 32 "out";
+P_0x6000013a6900 .param/l "WIDTH" 0 4 1, +C4<00000000000000000000000000100000>;
+v0x6000034a4510_0 .net "in0", 31 0, v0x6000034a60a0_0;  alias, 1 drivers
+v0x6000034a45a0_0 .net "in1", 31 0, L_0x6000037ac0a0;  alias, 1 drivers
+v0x6000034a4630_0 .net "out", 31 0, L_0x6000037ac140;  alias, 1 drivers
+v0x6000034a46c0_0 .net "select", 0 0, L_0x6000037ac1e0;  1 drivers
+L_0x6000037ac140 .functor MUXZ 32, v0x6000034a60a0_0, L_0x6000037ac0a0, L_0x6000037ac1e0, C4<>;
+S_0x13680f2b0 .scope module, "shamt_2" "mux_2" 3 23, 4 1 0, S_0x13680ea30;
+ .timescale -9 -10;
+    .port_info 0 /INPUT 1 "select";
+    .port_info 1 /INPUT 32 "in0";
+    .port_info 2 /INPUT 32 "in1";
+    .port_info 3 /OUTPUT 32 "out";
+P_0x6000013a6980 .param/l "WIDTH" 0 4 1, +C4<00000000000000000000000000100000>;
+v0x6000034a4750_0 .net "in0", 31 0, L_0x6000037ac640;  alias, 1 drivers
+v0x6000034a47e0_0 .net "in1", 31 0, L_0x6000037ac820;  alias, 1 drivers
+v0x6000034a4870_0 .net "out", 31 0, L_0x6000037ac8c0;  alias, 1 drivers
+v0x6000034a4900_0 .net "select", 0 0, L_0x6000037ac960;  1 drivers
+L_0x6000037ac8c0 .functor MUXZ 32, L_0x6000037ac640, L_0x6000037ac820, L_0x6000037ac960, C4<>;
+S_0x13680f420 .scope module, "shamt_4" "mux_2" 3 19, 4 1 0, S_0x13680ea30;
+ .timescale -9 -10;
+    .port_info 0 /INPUT 1 "select";
+    .port_info 1 /INPUT 32 "in0";
+    .port_info 2 /INPUT 32 "in1";
+    .port_info 3 /OUTPUT 32 "out";
+P_0x6000013a6a00 .param/l "WIDTH" 0 4 1, +C4<00000000000000000000000000100000>;
+v0x6000034a4990_0 .net "in0", 31 0, L_0x6000037ac3c0;  alias, 1 drivers
+v0x6000034a4a20_0 .net "in1", 31 0, L_0x6000037ac5a0;  alias, 1 drivers
+v0x6000034a4ab0_0 .net "out", 31 0, L_0x6000037ac640;  alias, 1 drivers
+v0x6000034a4b40_0 .net "select", 0 0, L_0x6000037ac6e0;  1 drivers
+L_0x6000037ac640 .functor MUXZ 32, L_0x6000037ac3c0, L_0x6000037ac5a0, L_0x6000037ac6e0, C4<>;
+S_0x13680f590 .scope module, "shamt_8" "mux_2" 3 15, 4 1 0, S_0x13680ea30;
+ .timescale -9 -10;
+    .port_info 0 /INPUT 1 "select";
+    .port_info 1 /INPUT 32 "in0";
+    .port_info 2 /INPUT 32 "in1";
+    .port_info 3 /OUTPUT 32 "out";
+P_0x6000013a6ac0 .param/l "WIDTH" 0 4 1, +C4<00000000000000000000000000100000>;
+v0x6000034a4bd0_0 .net "in0", 31 0, L_0x6000037ac140;  alias, 1 drivers
+v0x6000034a4c60_0 .net "in1", 31 0, L_0x6000037ac320;  alias, 1 drivers
+v0x6000034a4cf0_0 .net "out", 31 0, L_0x6000037ac3c0;  alias, 1 drivers
+v0x6000034a4d80_0 .net "select", 0 0, L_0x6000037ac460;  1 drivers
+L_0x6000037ac3c0 .functor MUXZ 32, L_0x6000037ac140, L_0x6000037ac320, L_0x6000037ac460, C4<>;
+S_0x136805b60 .scope module, "sll_1" "lshift_1bit" 3 26, 5 1 0, S_0x13680ea30;
+ .timescale -9 -10;
+    .port_info 0 /INPUT 32 "data_operandA";
+    .port_info 1 /OUTPUT 32 "data_result";
+P_0x6000013a6b40 .param/l "WIDTH" 0 5 1, +C4<00000000000000000000000000100000>;
+v0x6000034a4e10_0 .net *"_ivl_3", 30 0, L_0x6000037aca00;  1 drivers
+L_0x128078130 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x6000034a4ea0_0 .net/2u *"_ivl_7", 0 0, L_0x128078130;  1 drivers
+v0x6000034a4f30_0 .net "data_operandA", 31 0, L_0x6000037ac8c0;  alias, 1 drivers
+v0x6000034a4fc0_0 .net "data_result", 31 0, L_0x6000037acaa0;  alias, 1 drivers
+L_0x6000037aca00 .part L_0x6000037ac8c0, 0, 31;
+L_0x6000037acaa0 .concat8 [ 1 31 0 0], L_0x128078130, L_0x6000037aca00;
+S_0x136805cd0 .scope module, "sll_16" "lshift_16bit" 3 10, 6 1 0, S_0x13680ea30;
+ .timescale -9 -10;
+    .port_info 0 /INPUT 32 "data_operandA";
+    .port_info 1 /OUTPUT 32 "data_result";
+P_0x6000013a6c00 .param/l "WIDTH" 0 6 1, +C4<00000000000000000000000000100000>;
+v0x6000034a5050_0 .net *"_ivl_3", 15 0, L_0x6000037ac000;  1 drivers
+L_0x128078010 .functor BUFT 1, C4<0000000000000000>, C4<0>, C4<0>, C4<0>;
+v0x6000034a50e0_0 .net/2u *"_ivl_7", 15 0, L_0x128078010;  1 drivers
+v0x6000034a5170_0 .net "data_operandA", 31 0, v0x6000034a60a0_0;  alias, 1 drivers
+v0x6000034a5200_0 .net "data_result", 31 0, L_0x6000037ac0a0;  alias, 1 drivers
+L_0x6000037ac000 .part v0x6000034a60a0_0, 0, 16;
+L_0x6000037ac0a0 .concat8 [ 16 16 0 0], L_0x128078010, L_0x6000037ac000;
+S_0x136805e40 .scope module, "sll_2" "lshift_2bit" 3 22, 7 1 0, S_0x13680ea30;
+ .timescale -9 -10;
+    .port_info 0 /INPUT 32 "data_operandA";
+    .port_info 1 /OUTPUT 32 "data_result";
+P_0x6000013a6c80 .param/l "WIDTH" 0 7 1, +C4<00000000000000000000000000100000>;
+v0x6000034a5290_0 .net *"_ivl_3", 29 0, L_0x6000037ac780;  1 drivers
+L_0x1280780e8 .functor BUFT 1, C4<00>, C4<0>, C4<0>, C4<0>;
+v0x6000034a5320_0 .net/2u *"_ivl_7", 1 0, L_0x1280780e8;  1 drivers
+v0x6000034a53b0_0 .net "data_operandA", 31 0, L_0x6000037ac640;  alias, 1 drivers
+v0x6000034a5440_0 .net "data_result", 31 0, L_0x6000037ac820;  alias, 1 drivers
+L_0x6000037ac780 .part L_0x6000037ac640, 0, 30;
+L_0x6000037ac820 .concat8 [ 2 30 0 0], L_0x1280780e8, L_0x6000037ac780;
+S_0x136805fb0 .scope module, "sll_4" "lshift_4bit" 3 18, 8 1 0, S_0x13680ea30;
+ .timescale -9 -10;
+    .port_info 0 /INPUT 32 "data_operandA";
+    .port_info 1 /OUTPUT 32 "data_result";
+P_0x6000013a6a80 .param/l "WIDTH" 0 8 1, +C4<00000000000000000000000000100000>;
+v0x6000034a54d0_0 .net *"_ivl_3", 27 0, L_0x6000037ac500;  1 drivers
+L_0x1280780a0 .functor BUFT 1, C4<0000>, C4<0>, C4<0>, C4<0>;
+v0x6000034a5560_0 .net/2u *"_ivl_7", 3 0, L_0x1280780a0;  1 drivers
+v0x6000034a55f0_0 .net "data_operandA", 31 0, L_0x6000037ac3c0;  alias, 1 drivers
+v0x6000034a5680_0 .net "data_result", 31 0, L_0x6000037ac5a0;  alias, 1 drivers
+L_0x6000037ac500 .part L_0x6000037ac3c0, 0, 28;
+L_0x6000037ac5a0 .concat8 [ 4 28 0 0], L_0x1280780a0, L_0x6000037ac500;
+S_0x136806120 .scope module, "sll_8" "lshift_8bit" 3 14, 9 1 0, S_0x13680ea30;
+ .timescale -9 -10;
+    .port_info 0 /INPUT 32 "data_operandA";
+    .port_info 1 /OUTPUT 32 "data_result";
+P_0x6000013a6dc0 .param/l "WIDTH" 0 9 1, +C4<00000000000000000000000000100000>;
+v0x6000034a5710_0 .net *"_ivl_3", 23 0, L_0x6000037ac280;  1 drivers
+L_0x128078058 .functor BUFT 1, C4<00000000>, C4<0>, C4<0>, C4<0>;
+v0x6000034a57a0_0 .net/2u *"_ivl_7", 7 0, L_0x128078058;  1 drivers
+v0x6000034a5830_0 .net "data_operandA", 31 0, L_0x6000037ac140;  alias, 1 drivers
+v0x6000034a58c0_0 .net "data_result", 31 0, L_0x6000037ac320;  alias, 1 drivers
+L_0x6000037ac280 .part L_0x6000037ac140, 0, 24;
+L_0x6000037ac320 .concat8 [ 8 24 0 0], L_0x128078058, L_0x6000037ac280;
+    .scope S_0x13680ee70;
+T_0 ;
+    %pushi/vec4 0, 0, 5;
+    %store/vec4 v0x6000034a6010_0, 0, 5;
+    %pushi/vec4 1, 0, 32;
+    %store/vec4 v0x6000034a60a0_0, 0, 32;
+    %delay 100, 0;
+    %vpi_call 2 13 "$display", "A:%b, Shiftamt:%b => Output:%b", v0x6000034a60a0_0, v0x6000034a6010_0, v0x6000034a6130_0 {0 0 0};
+    %pushi/vec4 31, 0, 5;
+    %store/vec4 v0x6000034a6010_0, 0, 5;
+    %delay 100, 0;
+    %vpi_call 2 16 "$display", "A:%b, Shiftamt:%b => Output:%b", v0x6000034a60a0_0, v0x6000034a6010_0, v0x6000034a6130_0 {0 0 0};
+    %vpi_call 2 17 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 10;
+    "N/A";
+    "<interactive>";
+    "left_barrel_shifter_tb.v";
+    "left_barrel_shifter.v";
+    "mux.v";
+    "lshift_1bit.v";
+    "lshift_16bit.v";
+    "lshift_2bit.v";
+    "lshift_4bit.v";
+    "lshift_8bit.v";
