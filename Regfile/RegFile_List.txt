@@ -1,0 +1,5 @@
+dffe_ref.v
+reg_32bit.v
+regfile_tb.v
+regfile.v
+tristate_32bit.v
